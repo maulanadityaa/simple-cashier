@@ -9,6 +9,15 @@ body {
   background-color: #BD852B;
 }
 
+/* .btn-primary{
+  background-color: #BD852B;
+  outline-color: #BD852B;
+} */
+
+.text-primary a{
+  color: #BD852B;
+}
+
 .category-active{
   background-color: #BD852B;
   color: white;
