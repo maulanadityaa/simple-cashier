@@ -18,14 +18,13 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios
-      .get(API_URL + "products")
+      .get(API_URL + "products?category.nama=" + this.state.choosedCategory)
       .then((res) => {
         const menus = res.data;
         this.setState({ menus });
-        console.log(res);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("Error yaa ", error);
       });
 
     axios
@@ -35,11 +34,11 @@ export default class Home extends Component {
         this.setState({ keranjangs });
       })
       .catch((error) => {
-        console.log(error);
+        console.log("Error yaa ", error);
       });
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate(prevState, prevProps) {
     if (this.state.keranjangs !== prevState.keranjangs) {
       axios
         .get(API_URL + "keranjangs")
@@ -48,10 +47,14 @@ export default class Home extends Component {
           this.setState({ keranjangs });
         })
         .catch((error) => {
-          console.log(error);
+          console.log("Error yaa ", error);
         });
+      console.log("Prev"+prevState.keranjangs);
+      console.log("State"+this.state.keranjangs);
     }
   }
+
+  
 
   changeCategory = (value) => {
     this.setState({
@@ -85,7 +88,7 @@ export default class Home extends Component {
             .then((res) => {
               swal({
                 title: "Berhasil",
-                text: keranjang.product.nama + "Masuk Keranjang",
+                text: keranjang.product.nama + " masuk Keranjang",
                 icon: "success",
                 button: false,
                 timer: 2000,

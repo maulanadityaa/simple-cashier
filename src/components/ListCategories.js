@@ -30,7 +30,6 @@ export default class ListCategories extends Component {
     axios
       .get(API_URL + "categories")
       .then((res) => {
-        console.log(res);
         const categories = res.data;
         this.setState({ categories });
       })
