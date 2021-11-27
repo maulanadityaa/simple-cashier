@@ -49,8 +49,8 @@ export default class Home extends Component {
         .catch((error) => {
           console.log("Error yaa ", error);
         });
-      console.log("Prev"+prevState.keranjangs);
-      console.log("State"+this.state.keranjangs);
+    } else {
+      
     }
   }
 

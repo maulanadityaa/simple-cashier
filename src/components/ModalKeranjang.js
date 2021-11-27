@@ -11,9 +11,10 @@ const ModalKeranjang = ({
   jumlah,
   keterangan,
   tambah,
-  kurang
+  kurang,
+  changeHandler,
+  handleSubmit
 }) => {
-  console.log(keranjangDetail);
   if (keranjangDetail) {
     return (
       <Modal show={showModal} onHide={handleClose}>
@@ -26,7 +27,7 @@ const ModalKeranjang = ({
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Total Harga : </Form.Label>
               <p>
@@ -59,6 +60,7 @@ const ModalKeranjang = ({
                 name="keterangan"
                 placeholder="Contoh : Pedes, Nasi Setengah"
                 value={keterangan}
+                onChange={(event) => changeHandler(event)}
               />
             </Form.Group>
             <Button variant="primary" type="submit">Simpan</Button>

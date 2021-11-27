@@ -33,24 +33,36 @@ export default class Hasil extends Component {
 
   tambah = () => {
     this.setState({
-      jumlah: this.setState.jumlah + 1,
+      jumlah: this.state.jumlah + 1,
     });
   };
 
   kurang = () => {
     if (this.state.jumlah !== 1) {
       this.setState({
-        jumlah: this.setState.jumlah - 1,
+        jumlah: this.state.jumlah - 1,
       });
     }
   };
+
+  changeHandler = (event) => {
+    this.setState({
+      keterangan: event.target.value
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+
+    console.log(this.state.keterangan);
+  }
 
   render() {
     const { keranjangs } = this.props;
     return (
       <Col md={3} mt="2">
         <h4>
-          <strong>Daftar Pesanan</strong>
+          <sdasdtrong>Daftar Pesanan</sdasdtrong>
         </h4>
         <hr />
         {keranjangs.length !== 0 && (
@@ -85,6 +97,8 @@ export default class Hasil extends Component {
               {...this.state}
               tambah={this.tambah}
               kurang={this.kurang}
+              changeHandler={this.changeHandler}
+              handleSubmit={this.handleSubmit}
             />
           </ListGroup>
         )}
