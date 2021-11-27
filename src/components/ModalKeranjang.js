@@ -15,7 +15,7 @@ const ModalKeranjang = ({
   changeHandler,
   handleSubmit,
   totalHarga,
-  hapusPesanan
+  hapusPesanan,
 }) => {
   if (keranjangDetail) {
     return (
@@ -33,20 +33,28 @@ const ModalKeranjang = ({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Total Harga : </Form.Label>
               <p>
-                <strong>
-                  Rp. {numberWithCommas(totalHarga)}
-                </strong>
+                <strong>Rp. {numberWithCommas(totalHarga)}</strong>
               </p>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Jumlah : </Form.Label>
               <br />
-              <Button variant="primary" size="sm" className="ml-2" onClick={ () => kurang() }>
+              <Button
+                variant="primary"
+                size="sm"
+                className="ml-2"
+                onClick={() => kurang()}
+              >
                 <FontAwesomeIcon icon={faMinus} />
               </Button>
               <strong> {jumlah} </strong>
-              <Button variant="primary" size="sm" className="ml-2" onClick={ () => tambah() }>
+              <Button
+                variant="primary"
+                size="sm"
+                className="ml-2"
+                onClick={() => tambah()}
+              >
                 <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Form.Group>
@@ -60,16 +68,21 @@ const ModalKeranjang = ({
                 as="textarea"
                 rows={3}
                 name="keterangan"
-                placeholder="Contoh : Pedes, Nasi Setengah"
+                placeholder="Contoh : Pedes, Gula Setengah"
                 value={keterangan}
                 onChange={(event) => changeHandler(event)}
               />
             </Form.Group>
-            <Button variant="primary" type="submit">Simpan</Button>
+            <Button variant="primary" type="submit">
+              Simpan
+            </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={() => hapusPesanan(keranjangDetail.id)}>
+          <Button
+            variant="danger"
+            onClick={() => hapusPesanan(keranjangDetail.id)}
+          >
             <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
           </Button>
         </Modal.Footer>

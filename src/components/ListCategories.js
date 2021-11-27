@@ -42,7 +42,7 @@ export default class ListCategories extends Component {
     const { categories } = this.state;
     const { changeCategory, choosedCategory } = this.props;
     return (
-      <Col md={2} mt="2">
+      <Col md={2} className="mt-3">
         <h4>
           <strong>Kategori</strong>
         </h4>

@@ -23,6 +23,19 @@ body {
   color: white;
 }
 
+@media only screen and (max-height: 1000px){
+  .hasil {
+    height: 680px;
+  }
+  .menu {
+    height: 800px;
+  }
+}
+
+.overflow-auto::-webkit-scrollbar{
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

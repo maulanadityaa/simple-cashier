@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { Badge, Col, ListGroup, Row } from "react-bootstrap";
+import { Badge, Card, Col, ListGroup, Row } from "react-bootstrap";
 import swal from "sweetalert";
 import { API_URL } from "../utils/constants";
 import { numberWithCommas } from "../utils/utils";
@@ -89,7 +89,6 @@ export default class Hasil extends Component {
   };
 
   hapusPesanan = (id) => {
-
     this.handleClose();
 
     axios
@@ -111,48 +110,50 @@ export default class Hasil extends Component {
   render() {
     const { keranjangs } = this.props;
     return (
-      <Col md={3} mt="2">
+      <Col md={3} className="mt-3">
         <h4>
-          <sdasdtrong>Daftar Pesanan</sdasdtrong>
+          <strong>Daftar Pesanan</strong>
         </h4>
         <hr />
         {keranjangs.length !== 0 && (
-          <ListGroup variant="flush">
-            {keranjangs.map((menuKeranjang) => (
-              <ListGroup.Item
-                key={menuKeranjang.id}
-                onClick={() => this.handleShow(menuKeranjang)}
-              >
-                <Row>
-                  <Col xs={2}>
-                    <h4>
-                      <Badge pill bg="success">
-                        {menuKeranjang.jumlah}
-                      </Badge>
-                    </h4>
-                  </Col>
-                  <Col>
-                    <h5>{menuKeranjang.product.nama}</h5>
-                    <p>Rp. {numberWithCommas(menuKeranjang.product.harga)}</p>
-                  </Col>
-                  <Col>
-                    <strong className="float-right">
-                      Rp. {numberWithCommas(menuKeranjang.total_harga)}
-                    </strong>
-                  </Col>
-                </Row>
-              </ListGroup.Item>
-            ))}
-            <ModalKeranjang
-              handleClose={this.handleClose}
-              {...this.state}
-              tambah={this.tambah}
-              kurang={this.kurang}
-              changeHandler={this.changeHandler}
-              handleSubmit={this.handleSubmit}
-              hapusPesanan={this.hapusPesanan}
-            />
-          </ListGroup>
+          <Card className="overflow-auto border-0 hasil">
+            <ListGroup variant="flush">
+              {keranjangs.map((menuKeranjang) => (
+                <ListGroup.Item
+                  key={menuKeranjang.id}
+                  onClick={() => this.handleShow(menuKeranjang)}
+                >
+                  <Row>
+                    <Col xs={2}>
+                      <h4>
+                        <Badge pill bg="success">
+                          {menuKeranjang.jumlah}
+                        </Badge>
+                      </h4>
+                    </Col>
+                    <Col>
+                      <h5>{menuKeranjang.product.nama}</h5>
+                      <p>Rp. {numberWithCommas(menuKeranjang.product.harga)}</p>
+                    </Col>
+                    <Col>
+                      <strong className="float-right">
+                        Rp. {numberWithCommas(menuKeranjang.total_harga)}
+                      </strong>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              ))}
+              <ModalKeranjang
+                handleClose={this.handleClose}
+                {...this.state}
+                tambah={this.tambah}
+                kurang={this.kurang}
+                changeHandler={this.changeHandler}
+                handleSubmit={this.handleSubmit}
+                hapusPesanan={this.hapusPesanan}
+              />
+            </ListGroup>
+          </Card>
         )}
 
         <TotalBayar keranjangs={keranjangs} {...this.props} />
