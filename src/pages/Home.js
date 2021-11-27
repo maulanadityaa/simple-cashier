@@ -63,6 +63,7 @@ export default class Home extends Component {
       .get(API_URL + "keranjangs?product.id=" + value.id)
       .then((res) => {
         if (res.data.length === 0) {
+          this.getListKeranjang();
           const keranjang = {
             jumlah: 1,
             total_harga: value.harga,
@@ -93,6 +94,7 @@ export default class Home extends Component {
           axios
             .put(API_URL + "keranjangs/" + res.data[0].id, keranjang)
             .then((res) => {
+              this.getListKeranjang();
               swal({
                 title: "Berhasil",
                 text: keranjang.product.nama + "Masuk Keranjang",
