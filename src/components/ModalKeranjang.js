@@ -13,7 +13,9 @@ const ModalKeranjang = ({
   tambah,
   kurang,
   changeHandler,
-  handleSubmit
+  handleSubmit,
+  totalHarga,
+  hapusPesanan
 }) => {
   if (keranjangDetail) {
     return (
@@ -32,7 +34,7 @@ const ModalKeranjang = ({
               <Form.Label>Total Harga : </Form.Label>
               <p>
                 <strong>
-                  Rp. {numberWithCommas(keranjangDetail.total_harga)}
+                  Rp. {numberWithCommas(totalHarga)}
                 </strong>
               </p>
             </Form.Group>
@@ -67,7 +69,7 @@ const ModalKeranjang = ({
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger">
+          <Button variant="danger" onClick={() => hapusPesanan(keranjangDetail.id)}>
             <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
           </Button>
         </Modal.Footer>
