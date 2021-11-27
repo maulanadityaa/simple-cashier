@@ -5,8 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import { NavbarComponent } from './components'
-import NotFound from './pages/NotFound';
-import { Home, Success } from './pages'
+import { Home, Success, NotFound } from './pages'
 
 export default class App extends Component {
   render() {

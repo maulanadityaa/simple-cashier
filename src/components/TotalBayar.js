@@ -40,7 +40,7 @@ class TotalBayar extends Component {
 
                 <div class="d-grid gap-2">
                   <Button
-                    variant="primary"
+                    variant="primary-kasir"
                     className="mb-2 mt-3 mr-2"
                     onClick={() => this.submitTotalBayar(totalBayar)}
                   >
