@@ -9,10 +9,11 @@ body {
   background-color: #bd852b;
 }
 
-/* .btn-primary{
+.btn-primary-kasir{
   background-color: #BD852B;
   outline-color: #BD852B;
-} */
+  color: white;
+}
 
 .text-primary a {
   color: #bd852b;
