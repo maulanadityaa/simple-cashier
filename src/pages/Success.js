@@ -27,7 +27,7 @@ class Success extends Component {
   render() {
     return (
       <div className="mt-4 text-center">
-        <Image src="assets/images/success.png" width="500" />
+        <Image src="assets/images/success.png" className='img-thumbnail border-0' width="700" />
         <h2>Pemesanan Sukses!!</h2>
         <Button variant="primary-kasir" as={Link} to="/">
          <FontAwesomeIcon icon={faHome} /> Back to Home
