@@ -1,3 +1,5 @@
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { Component } from "react";
 import { Button, Image } from "react-bootstrap";
@@ -27,8 +29,8 @@ class Success extends Component {
       <div className="mt-4 text-center">
         <Image src="assets/images/success.png" width="500" />
         <h2>Pemesanan Sukses!!</h2>
-        <Button variant="primary" as={Link} to="/">
-          Back to Home
+        <Button variant="primary-kasir" as={Link} to="/">
+         <FontAwesomeIcon icon={faHome} /> Back to Home
         </Button>
       </div>
     );
