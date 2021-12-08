@@ -1,3 +1,5 @@
+import { faDrumstickBite } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
 
@@ -5,7 +7,10 @@ const NavbarComponent = () => {
   return (
     <Navbar variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/"><strong>Kasir</strong> App</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img src="https://img.icons8.com/material/24/000000/kawaii-french-fries.png" />
+          <strong> Kasir</strong> App
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
