@@ -6,7 +6,7 @@ const NavbarComponent = () => {
     <Navbar variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="/">
-          <img src="https://img.icons8.com/material/24/000000/kawaii-french-fries.png" />
+          <img src={"assets/images/icon.png"} alt="icon" />
           <strong> Kasir</strong> App
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
