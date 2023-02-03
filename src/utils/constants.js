@@ -1,1 +1,2 @@
-export const API_URL = "https://simple-cashier-api.as.r.appspot.com/";
+export const API_URL =
+  "https://my-json-server.typicode.com/maulanadityaa/simple-cashier-fakeAPI";
